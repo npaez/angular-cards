@@ -69,6 +69,14 @@ ng-card card-action.right-btns {
    text-align: right;
 }
 
+ng-card card-action.stack-btns a:not(.btn):not(.btn-large):not(.btn-floating) {
+   display: block;
+}
+
+ng-card card-action.stack-btns a:not(.btn):not(.btn-large):not(.btn-floating):first-child {
+   margin-bottom: 20px;
+}
+
 ng-card card-action.right-btns a:not(.btn):not(.btn-large):not(.btn-floating) {
    margin-left: 20px;
    margin-right: 0;
@@ -92,5 +100,3 @@ ng-card card-action.right-btns a.clickleable:not(.btn):not(.btn-large):not(.btn-
 ng-card card-action a.clickleable:not(.btn):not(.btn-large):not(.btn-floating) {
    cursor: pointer;
 }
-
-
