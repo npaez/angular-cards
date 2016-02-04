@@ -67,6 +67,10 @@ Basic structure:
 ## Tips
 - To align the buttons on the right, simply add the `right-btns` class to the `<card-action>` tag-
 
+```html
+<card-action class="right-btns">
+```
+
 
 ## Example
 
@@ -97,7 +101,7 @@ Card with Image Example:
                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                  quis nostrud exercitation.">
    </card-content>
-   <card-action>
+   <card-action class="right-btns">
       <card-button btn-title="Fire alert"
                    data-ng-click="showAlert()">
       </card-button>
