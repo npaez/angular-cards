@@ -82,6 +82,8 @@ Basic structure:
 <card-action class="right-btns stack-btns">
 ```
 
+- Limit the `<card-action>` tag to two buttons.
+
 ## Example
 
 Default Card Example:
