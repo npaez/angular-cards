@@ -17,7 +17,7 @@ Include both `angular-cards.js` and `angular-cards.css` in your project.
 Specify angular-cards as a dependency of your Angular module.
 
 ```js
-var app = angular.module('exampleApp', [
+var app = angular.module('ngApp', [
    'angular-cards'
 ]);
 ```
