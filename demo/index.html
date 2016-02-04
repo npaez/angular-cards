@@ -11,7 +11,7 @@
    <link href="../dist/angular-cards.css" rel="stylesheet">
 </head>
 <body ng-app="exampleApp" ng-cloak>
-   <div class="container" ng-controller="exampleCtrl">
+   <div class="container" ng-controller="exampleCtrl as ex">
       <div class="row">
          <div class="col-sm-offset-3 col-sm-6">
             <h1>angular-cards</h1>
@@ -42,7 +42,7 @@
                </card-content>
                <card-action>
                   <card-button btn-title="Fire Action"
-                               ng-clicK="showAlert()">
+                               ng-clicK="ex.showAlert()">
                   </card-button>
                </card-action>
             </ng-card>
@@ -58,7 +58,7 @@
                </card-content>
                <card-action>
                   <card-button btn-title="Fire alert"
-                               data-ng-click="showAlert()">
+                               data-ng-click="ex.showAlert()">
                   </card-button>
                   <card-button btn-title="Go to repository"
                                btn-src="https://github.com/npaez/angular-cards">
