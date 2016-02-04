@@ -71,6 +71,16 @@ Basic structure:
 <card-action class="right-btns">
 ```
 
+- To make stacked buttons, add the `stack-btns` class to the `<card-action>` tag
+```html
+<card-action class="stack-btns">
+```
+
+- The buttons are left aligned by default, even with the `stack-btns` classes. Cause of this, you can use both classes
+
+```html
+<card-action class="right-btns stack-btns">
+```
 
 ## Example
 
