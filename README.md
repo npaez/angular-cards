@@ -1,2 +1,2 @@
 # angular-cards
-Always under development
+Angular directives to create material design cards (Always under development)
