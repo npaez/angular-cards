@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>angular-cards</title>
+   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+   <link href="css/default.css" rel="stylesheet">
+   <link href="../dist/angular-cards.css" rel="stylesheet">
+</head>
+<body ng-app="exampleApp" ng-cloak>
+   <div class="container" ng-controller="exampleCtrl">
+      <div class="row">
+         <div class="col-sm-offset-3 col-sm-6">
+            <h1>angular-cards</h1>
+            <hr>
+            
+            <h3>Demo #1</h3>
+            <ng-card card-title="Default Card Example"
+                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat."
+                     primary-btn="go to google.com"
+                     primary-url="http://google.com"
+                     secondary-btn="i'm a link"
+                     secondary-url="#">
+            </ng-card>
+
+            <h3>Demo #2</h3>
+            <ng-card card-title="Pro Image Card"
+                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat."
+                     img-src="img/emma.jpg"
+                     primary-btn="go to google.com"
+                     primary-url="http://google.com"
+                     secondary-btn="i'm a link"
+                     secondary-url="#">
+            </ng-card>
+            
+            <h3>Demo #3</h3>
+            <ng-card card-title="Default Card with Right Buttons"
+                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat."
+                     primary-btn="go to google.com"
+                     primary-url="http://google.com"
+                     secondary-btn="i'm a link"
+                     secondary-url="#"
+                     right-btns="true">
+            </ng-card>
+
+            <h3>Demo #4</h3>
+            <ng-card card-title="Simple Card"
+                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat.">
+            </ng-card>
+
+            <h3>Demo #5</h3>
+            <ng-card card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat.">
+            </ng-card>
+         </div>
+      </div>
+   </div>
+
+
+
+<script src="js/angular.min.js"></script>
+<script src="../dist/angular-cards.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
