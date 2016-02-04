@@ -10,9 +10,7 @@ Include both `angular-cards.js` and `angular-cards.css` in your project.
 
 ```html
 <link href="path/to/angular-cards.css" rel="stylesheet">
-```
 
-```html
 <script src="path/to/angular-cards.js"></script>
 ```
 
@@ -26,8 +24,8 @@ var app = angular.module('exampleApp', [
 Use it in your project.
 
 ```html
-<html ng-app="ngApp">
-...
+<body ng-app="ngApp">
+   <!-- code goes here... -->
 <body>
 ```
 
@@ -35,45 +33,78 @@ Use it in your project.
 Basic structure:
 
 ```html
-<ng-card></ng-card>
+<ng-card>
+   <card-img img-src
+             img-title>
+   </card-img>
+   <card-content card-title
+                 card-text>
+   </card-content>
+   <card-action>
+      <card-button btn-title
+                   data-ng-click
+                   btn-src>
+      </card-button>
+</ng-card>
 ```
 
-Attributes:
-- `card-title`: Sets the title of your card.
-- `card-body`: Here goes the main text.
-- `img-src`: To add an image, just indicate its source.
-- `primary-btn` and `secondary-btn`: Sets the name of the button.
-- `primary-url` and `secondary-url`: Indicates the url.
-- `right-btns`: Alight the position of the buttons (false by default)
+## Attributes:
+
+`<card img>`
+- `img-src`: Sets the img on the card, in case is not defined the tag `<card-img>` will be remove.
+- `img-title`: Sets the title of the image (and card)
+
+`<card-content>`
+- `card-title`: Sets the main title of the card. (If `img-title` is defined, you can leave this attr without empty)
+- `card-text`: Sets the text in your card. (html code is accepted)
+
+`<card-button>`
+- `btn-title`: Sets the title of your link/button
+- `data-ng-click`: It sets the function to be executed on-click. (If this attribute is completed, the `btn-src` tag will be useless)
+- `btn-src`: In case `data-ng-click` is undefined, this attribute will be the alternative attribute for the button.
+
+
+## Tips
+- To align the buttons on the right, simply add the `right-btns` class to the `<card-action>` tag-
+
 
 ## Example
 
 Default Card Example:
 ```html
-<ng-card card-title="Default Card Example"
-         card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat."
-         primary-btn="go to google.com"
-         primary-url="http://google.com"
-         secondary-btn="i'm a link"
-         secondary-url="#">
+<ng-card>
+   <card-content card-title="Using ng-click()"
+                 card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.">
+   </card-content>
+   <card-action>
+      <card-button btn-title="Fire Action"
+                   ng-clicK="showAlert()">
+      </card-button>
+   </card-action>
 </ng-card>
 ```
 
 Card with Image Example:
 ```html
-<ng-card card-title="Pro Image Card"
-         card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat."
-         img-src="img/emma.jpg"
-         primary-btn="go to google.com"
-         primary-url="http://google.com"
-         secondary-btn="i'm a link"
-         secondary-url="#">
+<ng-card>
+   <card-img img-src="img/emma.jpg"
+             img-title="Card with image">
+   </card-img>
+   <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation.">
+   </card-content>
+   <card-action>
+      <card-button btn-title="Fire alert"
+                   data-ng-click="showAlert()">
+      </card-button>
+      <card-button btn-title="Go to repository"
+                   btn-src="https://github.com/npaez/angular-cards">
+      </card-button>
+   </card-action>
 </ng-card>
 ```
 

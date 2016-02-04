@@ -18,63 +18,91 @@
             <hr>
             
             <h3>Demo #1</h3>
-            <ng-card card-title="Default Card Example"
-                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat."
-                     primary-btn="go to google.com"
-                     primary-url="http://google.com"
-                     secondary-btn="i'm a link"
-                     secondary-url="#">
+            <ng-card>
+               <card-content card-title="Default Card Example"
+                             card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                             consequat.">
+               </card-content>
+               <card-action>
+                  <card-button btn-title="Go to repository"
+                               btn-src="https://github.com/npaez/angular-cards">
+                  </card-button>
+               </card-action>
             </ng-card>
 
-            <h3>Demo #2</h3>
-            <ng-card card-title="Pro Image Card"
-                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat."
-                     img-src="img/emma.jpg"
-                     primary-btn="go to google.com"
-                     primary-url="http://google.com"
-                     secondary-btn="i'm a link"
-                     secondary-url="#">
+            <h3>Demo #1</h3>
+            <ng-card>
+               <card-content card-title="Using ng-click()"
+                             card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                             consequat.">
+               </card-content>
+               <card-action>
+                  <card-button btn-title="Fire Action"
+                               ng-clicK="showAlert()">
+                  </card-button>
+               </card-action>
             </ng-card>
-            
+
             <h3>Demo #3</h3>
-            <ng-card card-title="Default Card with Right Buttons"
-                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat."
-                     primary-btn="go to google.com"
-                     primary-url="http://google.com"
-                     secondary-btn="i'm a link"
-                     secondary-url="#"
-                     right-btns="true">
+            <ng-card>
+               <card-img img-src="img/emma.jpg"
+                         img-title="Card with image">
+               </card-img>
+               <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation.">
+               </card-content>
+               <card-action>
+                  <card-button btn-title="Fire alert"
+                               data-ng-click="showAlert()">
+                  </card-button>
+                  <card-button btn-title="Go to repository"
+                               btn-src="https://github.com/npaez/angular-cards">
+                  </card-button>
+               </card-action>
             </ng-card>
+
 
             <h3>Demo #4</h3>
-            <ng-card card-title="Simple Card"
-                     card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat.">
+            <ng-card>
+               <card-content card-title="Card With Right Button"
+                             card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                             consequat.">
+               </card-content>
+               <card-action class="right-btns">
+                  <card-button btn-title="Go to repository"
+                               btn-src="https://github.com/npaez/angular-cards">
+                  </card-button>
+               </card-action>
             </ng-card>
 
             <h3>Demo #5</h3>
-            <ng-card card-body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat.">
+            <ng-card>
+               <card-content card-title="Simple Card"
+                             card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                             consequat.">
+               </card-content>
+            </ng-card>
+
+            <h3>Demo #6</h3>
+            <ng-card>
+               <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                             consequat.">
+               </card-content>
             </ng-card>
          </div>
       </div>
    </div>
-
-
-
 <script src="js/angular.min.js"></script>
 <script src="../dist/angular-cards.js"></script>
 <script src="js/script.js"></script>

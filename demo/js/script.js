@@ -2,5 +2,9 @@ angular.module('exampleApp', [
 	'angular-cards'
 ])
 .controller('exampleCtrl', function(){
-	// code ...
+	var vm = this;
+	
+	vm.showAlert = function() {
+		alert('This is an alert!');
+	}
 });

@@ -6,62 +6,74 @@
  */
 'use strict';
 angular.module('angular-cards', [])
-.directive('ngCard', function(){
+.directive('cardImg', function() {
    return {
       restrict: 'E',
       replace: true,
       scope: {
-         imgSrc: "@",
-         cardTitle: "@",
-         cardBody: "@",
-         primaryBtn: "@",
-         primaryUrl: "@",
-         secondaryBtn: "@",
-         secondaryUrl: "@"
+         imgSrc: '@',
+         imgTitle: '@'
       },
-      link: function($scope, element, attrs) {
+      link: function(scope, element, attrs) {
          /*!
-          * remove title in card if theres an image or removes the ng-card-img div
+          * If imgSrc is undefined, erase the div
           */
-         if(attrs.imgSrc != undefined) {
-            element.find('card-title').remove();
-         } else {
-            element.find('ng-card-image').remove();
-         }
-
-         /*!
-          * if no primary-btn attrs, remove the cards buttons div.
-          */
-         if(attrs.primaryBtn == undefined) {
-            element.find('card-button').remove();
-         }
-
-         /*!
-          * set buttons to the right or left (default)
-          */
-         if(attrs.rightBtns == 'true') {
-            element.find('card-button').css('text-align', 'right');
-            element.find('a').css('margin-left', '20px');
-            element.find('a').css('margin-right', '0');
-         } else {
-            element.find('card-button').css('text-align', 'left');
-            element.find('a').css('margin-left', '0');
-            element.find('a').css('margin-right', '20px');
+         if(!attrs.imgSrc) {
+            element.find('card-img').remove();
          }
       },
-      template: '<div class="ng-card">'
-               +   '<ng-card-image class="ng-card-image">'
-               +      '<img ng-src="{{ imgSrc }}"/>'
-               +      '<card-title-img class="ng-card-title">{{ cardTitle }}</card-title-img>'
-               +   '</ng-card-image>'
-               +   '<div class="ng-card-content">'
-               +      '<card-title class="ng-card-title">{{ cardTitle }}</card-title>'
-               +      '<card-body>{{ cardBody }}</card-body>'
-               +   '</div>'
-               +   '<card-button class="ng-card-action">'
-               +      '<a ng-href="{{ primaryUrl }}">{{ primaryBtn }}</a>'
-               +      '<a ng-href="{{ secondaryUrl }}">{{ secondaryBtn }}</a>'
-               +   '</card-button>'
+      template: '<div class="card-img">'
+               +   '<img ng-src="{{ imgSrc }}">'
+               +   '<span class="card-title">{{ imgTitle }}</span>'
                +'</div>'
-   };
+   }
+})
+.directive('cardContent', function() {
+   return {
+      restrict: 'E',
+      replace: true,
+      link: function(scope, element, attrs) {
+         /*!
+          * Sets the title
+          */
+         attrs.$observe('cardTitle', function(value){
+             element.find('span').text(value);
+         });
+
+         /*!
+          * Sets the card text
+          */
+         attrs.$observe('cardText', function(value){
+             element.find('p').html(value);
+         });
+      },
+      template: '<div class="card-content">'
+               +   '<span class="card-title"></span>'
+               +   '<p class="card-text"></p>'
+               +'</div>'
+   }
+})
+.directive('cardButton', function($compile) {
+   return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+         btnTitle: '@',
+         eventHandler: '&ngClick',
+         btnSrc: '@'
+      },
+      link: function(scope, element, attrs) {
+         if(!attrs.btnSrc) {
+            /*!
+             * Since its has no source, it assumes that you are using a function.
+             */
+            element.replaceWith($compile('<a ng-click="eventHandler()" class="clickleable">{{ btnTitle }}</a>')(scope));
+         } else {
+            /*!
+             * In this case, you are using a common <a> tag
+             */
+            element.replaceWith($compile('<a ng-href="{{ btnSrc }}">{{ btnTitle }}</a>')(scope));
+         }
+      }
+   }
 });
