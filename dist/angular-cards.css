@@ -1,0 +1,87 @@
+.ng-card {
+   position: relative;
+   margin: 0.5rem 0 2rem 0;
+   background-color: #fafafa;
+   transition: box-shadow .25s;
+   border-radius: 2px;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.ng-card .ng-card-content {
+   padding: 20px;
+   border-radius: 0 0 2px 2px;
+}
+
+.ng-card .ng-card-image {
+   position: relative;
+}
+
+.ng-card .ng-card-image img {
+   display: block;
+   border-radius: 2px 2px 0 0;
+   position: relative;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.ng-card .ng-card-content .ng-card-title {
+   line-height: 48px;
+}
+
+.ng-card .ng-card-image .ng-card-title {
+   color: #fff;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 20px;
+}
+
+.ng-card .ng-card-title {
+   font-size: 24px;
+   font-weight: 300;
+   font-family: 'Roboto';
+   font-weight: 300;
+}
+
+.ng-card .ng-card-content card-body {
+   display: block;
+   margin: 0;
+   color: inherit;
+   font-family: 'Noto Sans';
+}
+
+ng-card-image,
+card-button {
+   display: block;
+}
+
+.ng-card .ng-card-action {
+   border-top: 1px solid rgba(160,160,160,0.2);
+   padding: 20px;
+}
+
+.ng-card .ng-card-action.right {
+   text-align: right;
+}
+
+.ng-card .ng-card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+   color: #2196f3;
+   margin-right: 20px;
+   transition: color .3s ease;
+   text-transform: uppercase;
+   text-decoration: none;
+   font-family: 'Roboto';
+   font-weight: 400;
+}
+
+.ng-card .ng-card-action a:not(.btn):not(.btn-large):not(.btn-floating).right {
+   margin-right: 0;
+   margin-left: 20px;
+}
+
+.ng-card .ng-card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+   color: #90caf9;
+}
