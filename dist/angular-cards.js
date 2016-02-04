@@ -1,3 +1,9 @@
+/*!
+ * author: Nestor Paez
+ * version: 0.0.1
+ * license: MIT
+ * homepage: http://github.com/npaez/angular-cards
+ */
 'use strict';
 angular.module('angular-cards', [])
 .directive('ngCard', function(){
@@ -22,7 +28,6 @@ angular.module('angular-cards', [])
          } else {
             element.find('ng-card-image').remove();
          }
-
 
          /*!
           * if no primary-btn attrs, remove the cards buttons div.
