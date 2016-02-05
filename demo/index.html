@@ -11,13 +11,34 @@
    <link href="../dist/angular-cards.css" rel="stylesheet">
 </head>
 <body ng-app="exampleApp" ng-cloak>
-   <div class="container" ng-controller="exampleCtrl as ex">
+   <div class="container">
+      <h1>angular-cards <span>(always under development)</span></h1>
+      <hr>
+      <p>Based on Google's Material Design cards, <a href="https://github.com/npaez/angular-cards">angular-cards</a> provides easy-to-use directives for its implementation.</p>
+
       <div class="row">
-         <div class="col-sm-offset-3 col-sm-6">
-            <h1>angular-cards</h1>
-            <hr>
-            
-            <h3>Demo #1</h3>
+         <div class="col-sm-12">
+            <h2 id="demo1" class="h2-no-bottom">Demo #1</h2>
+            <p class="subtitle">This is the default example of angular-cards. With card title, a paragraph and an link button.</p>
+         </div>
+         <div class="col-sm-6">
+         <h3 class="label">HTML</h3>
+         <pre>&#x3C;ng-card&#x3E;
+   &#x3C;card-content card-title=&#x22;Default Card Example&#x22;
+                 card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                 laboris nisi ut aliquip ex ea commodo consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action&#x3E;
+      &#x3C;card-button btn-title=&#x22;Go to repository&#x22;
+                   btn-src=&#x22;https://github.com/npaez/angular-cards&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
             <ng-card>
                <card-content card-title="Default Card Example"
                              card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -31,9 +52,46 @@
                   </card-button>
                </card-action>
             </ng-card>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo2" class="h2-no-bottom">Demo #2</h2>
+            <p class="subtitle">This is the default example of angular-cards. Like <a href="#demo1">demo #1</a> but with an action button.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card ng-controller=&#x22;exampleCtrl as ex&#x22;&#x3E;
+   &#x3C;card-content card-title=&#x22;Using ng-click()&#x22;
+                 card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action&#x3E;
+      &#x3C;card-button btn-title=&#x22;Fire Action&#x22;
+                   ng-clicK=&#x22;ex.showAlert()&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
 
-            <h3>Demo #2</h3>
-            <ng-card>
+            <h3 class="label">JAVASCRIPT</h3>
+            <pre>
+angular.module(&#x27;exampleApp&#x27;, [
+   &#x27;angular-cards&#x27;
+])
+.controller(&#x27;exampleCtrl&#x27;, function(){
+   var vm = this;
+
+   vm.showAlert = function() {
+      alert(&#x27;This is an alert!&#x27;);
+   }
+});</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
+            <ng-card ng-controller="exampleCtrl as ex">
                <card-content card-title="Using ng-click()"
                              card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -46,9 +104,49 @@
                   </card-button>
                </card-action>
             </ng-card>
+         </div>
+      </div>
 
-            <h3>Demo #3</h3>
-            <ng-card>
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo3" class="h2-no-bottom">Demo #3</h2>
+            <p class="subtitle">A Material Design card with an image header. With an action button and an link button.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card ng-controller=&#x22;exampleCtrl as ex&#x22;&#x3E;
+   &#x3C;card-img img-src=&#x22;img/emma.jpg&#x22;
+             img-title=&#x22;Card with image&#x22;&#x3E;
+   &#x3C;/card-img&#x3E;
+   &#x3C;card-content card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action&#x3E;
+      &#x3C;card-button btn-title=&#x22;Fire alert&#x22;
+                   ng-click=&#x22;ex.showAlert()&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+      &#x3C;card-button btn-title=&#x22;Go to repository&#x22;
+                   btn-src=&#x22;https://github.com/npaez/angular-cards&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+
+            <h3 class="label">JAVASCRIPT</h3>
+            <pre>angular.module(&#x27;exampleApp&#x27;, [
+   &#x27;angular-cards&#x27;
+])
+.controller(&#x27;exampleCtrl&#x27;, function(){
+   var vm = this;
+
+   vm.showAlert = function() {
+      alert(&#x27;This is an alert!&#x27;);
+   }
+});</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
+            <ng-card ng-controller="exampleCtrl as ex">
                <card-img img-src="img/emma.jpg"
                          img-title="Card with image">
                </card-img>
@@ -65,9 +163,32 @@
                   </card-button>
                </card-action>
             </ng-card>
+         </div>
+      </div>
 
-
-            <h3>Demo #4</h3>
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo4" class="h2-no-bottom">Demo #4</h2>
+            <p class="subtitle">Default card with right align buttons.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card&#x3E;
+   &#x3C;card-content card-title=&#x22;Card With Right Button&#x22;
+                 card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action class=&#x22;right-btns&#x22;&#x3E;
+      &#x3C;card-button btn-title=&#x22;Go to repository&#x22;
+                   btn-src=&#x22;https://github.com/npaez/angular-cards&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
             <ng-card>
                <card-content card-title="Card With Right Button"
                              card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -81,8 +202,36 @@
                   </card-button>
                </card-action>
             </ng-card>
+         </div>
+      </div>
 
-            <h3>Demo #5</h3>
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo5" class="h2-no-bottom">Demo #5</h2>
+            <p class="subtitle">Default card with stacked buttons.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card&#x3E;
+   &#x3C;card-content card-title=&#x22;Card with Stack Buttons&#x22;
+                 card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action class=&#x22;right-btns stack-btns&#x22;&#x3E;
+      &#x3C;card-button btn-title=&#x22;Go to repository&#x22;
+                   btn-src=&#x22;https://github.com/npaez/angular-cards&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+
+      &#x3C;card-button btn-title=&#x22;Go to developer&#x27;s web&#x22;
+                   btn-src=&#x22;http://npaez.github.io/&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
             <ng-card>
                <card-content card-title="Card with Stack Buttons"
                              card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -100,8 +249,27 @@
                   </card-button>
                </card-action>
             </ng-card>
+         </div>
+      </div>
 
-            <h3>Demo #6</h3>
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo6" class="h2-no-bottom">Demo #6</h2>
+            <p class="subtitle">Default card with no action/link button.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card&#x3E;
+   &#x3C;card-content card-title=&#x22;Simple Card&#x22;
+                 card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
             <ng-card>
                <card-content card-title="Simple Card"
                              card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -110,8 +278,26 @@
                              consequat.">
                </card-content>
             </ng-card>
+         </div>
+      </div>
 
-            <h3>Demo #7</h3>
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo7" class="h2-no-bottom">Demo #7</h2>
+            <p class="subtitle">Simple text card. No action buttons, no title, no image.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre>&#x3C;ng-card&#x3E;
+   &#x3C;card-content card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
             <ng-card>
                <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -121,6 +307,10 @@
             </ng-card>
          </div>
       </div>
+
+      <hr>
+
+      <p class="text-right">developed with &#x3C;3 by <a href="http://npaez.github.io/">Nestor Paez</a></p>
    </div>
 <script src="js/angular.min.js"></script>
 <script src="../dist/angular-cards.js"></script>
