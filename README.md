@@ -17,7 +17,7 @@ Include both `angular-cards.js` and `angular-cards.css` in your project.
 Specify angular-cards as a dependency of your Angular module.
 
 ```js
-var app = angular.module('ngApp', [
+var app = angular.module('exampleApp', [
    'angular-cards'
 ]);
 ```
@@ -55,6 +55,7 @@ Basic structure:
 - `img-title`: Sets the title of the image (and card)
 
 `<card-content>`
+- `card-icon`: Sets the main card icon
 - `card-title`: Sets the main title of the card. (If `img-title` is defined, you can leave this attr without empty)
 - `card-text`: Sets the text in your card. (html code is accepted)
 
