@@ -6,10 +6,45 @@
  */
 'use strict';
 angular.module('angular-cards', [])
+.directive('cardHeader', function($compile) {
+   return {
+      restrict: 'E',
+      scope: {
+         imgSrc: '@'
+      },
+      link: function(scope, element, attrs) {
+         if(attrs.imgSrc != undefined) {
+            element.find('span').css('margin-left', '55px');
+            element.find('h4').css('margin-left', '55px');
+            console.log(attrs.imgSrc);
+         } else {
+            element.find('img').remove();
+         }
+
+         if(!attrs.cardTitle) {
+            element.find('div').remove();
+         } else {
+            attrs.$observe('cardTitle', function(value){
+               element.find('h4').text(value);
+            });
+
+            if(attrs.cardSubtitle != undefined) {
+               attrs.$observe('cardSubtitle', function(value){
+                  element.find('span').text(value);
+               });
+            }
+         }
+      },
+      template: '<div class="card-header">'
+               +   '<img class="img-src" ng-src="{{ imgSrc }}">'
+               +   '<h4 class="card-title"></h4>'
+               +   '<span class="card-subtitle"></span>'
+               +'</div>'
+   }
+})
 .directive('cardImg', function() {
    return {
       restrict: 'E',
-      replace: true,
       scope: {
          imgSrc: '@',
          imgTitle: '@'
@@ -19,7 +54,8 @@ angular.module('angular-cards', [])
           * If imgSrc is undefined, erase the div
           */
          if(!attrs.imgSrc) {
-            element.find('card-img').remove();
+            element.find('span').remove();
+            element.find('div').remove();
          }
       },
       template: '<div class="card-img">'

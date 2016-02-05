@@ -17,7 +17,7 @@ Include both `angular-cards.js` and `angular-cards.css` in your project.
 Specify angular-cards as a dependency of your Angular module.
 
 ```js
-var app = angular.module('exampleApp', [
+var app = angular.module('ngApp', [
    'angular-cards'
 ]);
 ```
@@ -34,11 +34,14 @@ Basic structure:
 
 ```html
 <ng-card>
+   <card-header img-src
+                card-title
+                card-subtitle>
+   </card-header>
    <card-img img-src
              img-title>
    </card-img>
-   <card-content card-icon
-                 card-title
+   <card-content card-title
                  card-text>
    </card-content>
    <card-action>
@@ -46,19 +49,25 @@ Basic structure:
                    data-ng-click
                    btn-src>
       </card-button>
+    </card-action>
 </ng-card>
 ```
 
 ## Attributes:
 
-`<card img>`
+`<card-header>`
+- `img-src`: Sets the avatar. This attribute is not necessary, the header could not have an image.
+- `card-title`: Sets the title of the header. (If this attributes is undefined, the `<card-header>` tag will be remove)
+- `card-subtitle`: Sets the subtitle of the header.
+
+`<card-img>`
 - `img-src`: Sets the img on the card, in case is not defined the tag `<card-img>` will be remove.
-- `img-title`: Sets the title of the image (and card)
+- `img-title`: Sets the title of the image. (This attribute is not required)
 
 `<card-content>`
 - `card-icon`: Sets the main card icon
-- `card-title`: Sets the main title of the card. (If `img-title` is defined, you can leave this attr without empty)
-- `card-text`: Sets the text in your card. (html code is accepted)
+- `card-title`: Sets the main title of the card. (If `img-title` is defined, you can leave this attribute empty)
+- `card-text`: Sets the text in your card. (HTML code is accepted)
 
 `<card-button>`
 - `btn-title`: Sets the title of your link/button
@@ -121,6 +130,26 @@ Card with Image Example:
       </card-button>
       <card-button btn-title="Go to repository"
                    btn-src="https://github.com/npaez/angular-cards">
+      </card-button>
+   </card-action>
+</ng-card>
+```
+
+Card with Header and Image:
+```html
+<ng-card ng-controller="exampleCtrl as ex">
+   <card-header img-src="img/profile.png"
+                card-title="This is a title"
+                card-subtitle="With a brand subheader">
+   </card-header>   
+   <card-img img-src="img/emma2.jpg">
+   </card-img>
+   <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua.">
+   </card-content>
+   <card-action class="right-btns">
+      <card-button btn-title="Show alert"
+                   ng-click="ex.showAlert()">
       </card-button>
    </card-action>
 </ng-card>
