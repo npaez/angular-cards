@@ -106,3 +106,28 @@ ng-card card-action.right-btns a.clickleable:not(.btn):not(.btn-large):not(.btn-
 ng-card card-action a.clickleable:not(.btn):not(.btn-large):not(.btn-floating) {
    cursor: pointer;
 }
+
+
+ng-card .card-header {
+   padding: 20px;
+   display: block;
+}
+
+ng-card .card-header img.img-src {
+   width: 44px;
+   border-radius: 50%;
+   position: absolute;
+   margin-top: -2px;
+}
+
+ng-card .card-header .card-subtitle,
+ng-card .card-header .card-title {
+   margin: 0; /* margin: 0 0 0 55px; */
+   font-size: 14px;
+   font-family: 'Roboto';
+   font-weight: 400;
+}
+
+ng-card .card-header .card-subtitle {
+   color: #888;
+}
