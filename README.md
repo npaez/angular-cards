@@ -37,7 +37,8 @@ Basic structure:
    <card-img img-src
              img-title>
    </card-img>
-   <card-content card-title
+   <card-content card-icon
+                 card-title
                  card-text>
    </card-content>
    <card-action>
