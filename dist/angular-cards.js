@@ -46,8 +46,19 @@ angular.module('angular-cards', [])
          attrs.$observe('cardText', function(value){
              element.find('p').html(value);
          });
+
+         if('cardIcon' in attrs) {
+            attrs.$observe('cardIcon', function(value){
+                element.find('i').html(value);
+                element.find('span').css('padding-left', '48px');
+                element.find('span').css('margin-top', '-1px');
+                element.find('p').css('padding-left', '48px');
+            });
+            console.log("test");
+         }
       },
       template: '<div class="card-content">'
+               +   '<div class="icon-inner"><i></i></div>'
                +   '<span class="card-title"></span>'
                +   '<p class="card-text"></p>'
                +'</div>'

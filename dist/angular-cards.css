@@ -52,6 +52,12 @@ ng-card .card-content {
    border-radius: 0 0 2px 2px;
 }
 
+ng-card .card-content .icon-inner i {
+   color: #2196f3;
+   position: absolute;
+   font-size: 30px;
+}
+
 ng-card .card-content p.card-text {
    margin: 5px 0 0 0;
    color: inherit;

@@ -55,6 +55,7 @@ Basic structure:
 - `img-title`: Sets the title of the image (and card)
 
 `<card-content>`
+- `card-icon`: Sets the main card icon
 - `card-title`: Sets the main title of the card. (If `img-title` is defined, you can leave this attr without empty)
 - `card-text`: Sets the text in your card. (html code is accepted)
 
