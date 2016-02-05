@@ -13,6 +13,12 @@
 </head>
 <body ng-app="exampleApp" ng-cloak>
    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+            
+         </div>
+      </div>
+
       <h1>angular-cards <span>(always under development)</span></h1>
       <hr>
       <p>Based on Google's Material Design cards, <a href="https://github.com/npaez/angular-cards">angular-cards</a> provides easy-to-use directives for its implementation.</p>
@@ -339,6 +345,66 @@ angular.module(&#x27;exampleApp&#x27;, [
             </ng-card>
          </div>
       </div>
+
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo8" class="h2-no-bottom">Demo #9</h2>
+            <p class="subtitle">Simple text card with icon support.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label">HTML</h3>
+            <pre class="prettyprint lang-html">&#x3C;ng-card ng-controller=&#x22;exampleCtrl as ex&#x22;&#x3E;
+   &#x3C;card-header img-src=&#x22;img/profile.png&#x22;
+                card-title=&#x22;This is a title&#x22;
+                card-subtitle=&#x22;With a brand subheader&#x22;&#x3E;
+   &#x3C;/card-header&#x3E;
+   
+   &#x3C;card-img img-src=&#x22;img/emma2.jpg&#x22;&#x3E;
+   &#x3C;/card-img&#x3E;
+   &#x3C;card-content card-text=&#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua.&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action class=&#x22;right-btns&#x22;&#x3E;
+      &#x3C;card-button btn-title=&#x22;Fire alert&#x22;
+                   ng-click=&#x22;ex.showAlert()&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+
+            <h3 class="label">JAVASCRIPT</h3>
+            <pre class="prettyprint lang-js">angular.module(&#x27;exampleApp&#x27;, [
+   &#x27;angular-cards&#x27;
+])
+.controller(&#x27;exampleCtrl&#x27;, function(){
+   var vm = this;
+   
+   vm.showAlert = function() {
+      alert(&#x27;This is an alert!&#x27;);
+   }
+});</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
+            <ng-card ng-controller="exampleCtrl as ex">
+               <card-header img-src="img/profile.png"
+                            card-title="This is a title"
+                            card-subtitle="With a brand subheader">
+               </card-header>
+               
+               <card-img img-src="img/emma2.jpg">
+               </card-img>
+               <card-content card-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua.">
+               </card-content>
+               <card-action class="right-btns">
+                  <card-button btn-title="Show alert"
+                               ng-click="ex.showAlert()">
+                  </card-button>
+               </card-action>
+            </ng-card>
+         </div>
+      </div>
+
 
       <hr>
 
