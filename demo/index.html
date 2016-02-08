@@ -406,6 +406,72 @@ angular.module(&#x27;exampleApp&#x27;, [
       </div>
 
 
+      <div class="row">
+         <div class="col-sm-12">
+            <h2 id="demo8" class="h2-no-bottom">Demo #10</h2>
+            <p class="subtitle">Reading data from controller.</p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">HTML</h3>
+            <pre class="prettyprint lang-html" ng-controller="keepSame">&#x3C;ng-card ng-controller=&#x22;example2Ctrl&#x22;&#x3E;
+   &#x3C;card-content card-title=&#x22;{{ body.title }}&#x22;
+                 card-text=&#x22;{{ body.text }}&#x22;&#x3E;
+   &#x3C;/card-content&#x3E;
+   &#x3C;card-action&#x3E;
+      &#x3C;card-button btn-title=&#x22;{{ buttons.title }}&#x22;
+                   ng-click=&#x22;controllerFunction(&#x27;I\&#x27;m a friendly alert&#x27;)&#x22;
+      &#x3C;/card-button&#x3E;
+
+      &#x3C;card-button btn-title=&#x22;{{ buttons2.title }}&#x22;
+                   btn-src=&#x22;{{ buttons2.src }}&#x22;&#x3E;
+      &#x3C;/card-button&#x3E;
+   &#x3C;/card-action&#x3E;
+&#x3C;/ng-card&#x3E;</pre>
+
+
+            <h3 class="label label-suc">JAVASCRIPT</h3>
+            <pre class="prettyprint lang-js">.controller(&#x27;example2Ctrl&#x27;, function($scope){
+   $scope.body = {
+      title: &#x22;Card Title&#x22;,
+      text: &#x22;Lorem ipsum dolor sit amet, consectetur adipisicing elit,&#x22;
+          + &#x22;sed do eiusmod tempor incididunt ut labore et dolore magna&#x22;
+          + &#x22;aliqua. Ut enim ad minim veniam, quis nostrud exercitation&#x22;
+          + &#x22;ullamco laboris nisi ut aliquip ex ea commodo consequat.&#x22;
+   };
+
+   $scope.buttons = {
+      title: &#x22;Do something&#x22;
+   };
+
+   $scope.buttons2 = {
+      title: &#x22;Sinaptica&#x22;,
+      src: &#x22;https://sinaptica.io/&#x22;
+   };
+
+   $scope.controllerFunction = function(data) {
+      alert(data);
+   };
+});</pre>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="label label-suc">RESULT</h3>
+            <ng-card ng-controller="example2Ctrl">
+               <card-content card-title="{{ body.title }}"
+                             card-text="{{ body.text }}">
+               </card-content>
+               <card-action>
+                  <card-button btn-title="{{ buttons.title }}"
+                               ng-click="controllerFunction('I\'m a friendly alert')">
+                  </card-button>
+
+                  <card-button btn-title="{{ buttons2.title }}"
+                               btn-src="{{ buttons2.src }}">
+                  </card-button>
+               </card-action>
+            </ng-card>
+         </div>
+      </div>
+
       <hr>
 
       <p class="text-right">developed with <i class="fa fa-heart-o"></i> by <a href="http://npaez.github.io/">Nestor Paez</a></p>

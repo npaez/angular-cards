@@ -16,10 +16,9 @@ angular.module('angular-cards', [])
          if(attrs.imgSrc != undefined) {
             element.find('span').css('margin-left', '55px');
             element.find('h4').css('margin-left', '55px');
-            console.log(attrs.imgSrc);
          } else {
             element.find('img').remove();
-         }
+         };
 
          if(!attrs.cardTitle) {
             element.find('div').remove();
@@ -32,15 +31,15 @@ angular.module('angular-cards', [])
                attrs.$observe('cardSubtitle', function(value){
                   element.find('span').text(value);
                });
-            }
-         }
+            };
+         };
       },
       template: '<div class="card-header">'
                +   '<img class="img-src" ng-src="{{ imgSrc }}">'
                +   '<h4 class="card-title"></h4>'
                +   '<span class="card-subtitle"></span>'
                +'</div>'
-   }
+   };
 })
 .directive('cardImg', function() {
    return {
@@ -56,13 +55,13 @@ angular.module('angular-cards', [])
          if(!attrs.imgSrc) {
             element.find('span').remove();
             element.find('div').remove();
-         }
+         };
       },
       template: '<div class="card-img">'
                +   '<img ng-src="{{ imgSrc }}">'
                +   '<span class="card-title">{{ imgTitle }}</span>'
                +'</div>'
-   }
+   };
 })
 .directive('cardContent', function() {
    return {
@@ -90,15 +89,14 @@ angular.module('angular-cards', [])
                 element.find('span').css('margin-top', '-1px');
                 element.find('p').css('padding-left', '48px');
             });
-            console.log("test");
-         }
+         };
       },
       template: '<div class="card-content">'
                +   '<div class="icon-inner"><i></i></div>'
                +   '<span class="card-title"></span>'
                +   '<p class="card-text"></p>'
                +'</div>'
-   }
+   };
 })
 .directive('cardButton', function($compile) {
    return {
@@ -120,7 +118,7 @@ angular.module('angular-cards', [])
              * In this case, you are using a common <a> tag
              */
             element.replaceWith($compile('<a ng-href="{{ btnSrc }}">{{ btnTitle }}</a>')(scope));
-         }
+         };
       }
-   }
+   };
 });
