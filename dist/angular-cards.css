@@ -107,7 +107,6 @@ ng-card card-action a.clickleable:not(.btn):not(.btn-large):not(.btn-floating) {
    cursor: pointer;
 }
 
-
 ng-card .card-header {
    padding: 20px;
    display: block;
