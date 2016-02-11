@@ -121,7 +121,7 @@ ng-card .card-header img.img-src {
 
 ng-card .card-header .card-subtitle,
 ng-card .card-header .card-title {
-   margin: 0; /* margin: 0 0 0 55px; */
+   margin: 0;
    font-size: 14px;
    font-family: 'Roboto';
    font-weight: 400;
