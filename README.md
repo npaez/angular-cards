@@ -1,6 +1,7 @@
 # angular-cards
 Angular directives to create material design cards (Always under development)
 
+## :warning: Please note, this project is deprecated and no longer being maintained
 
 ## Demo
 Check out the demo [here](http://npaez.github.io/angular-cards/demo/).
